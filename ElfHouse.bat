@@ -310,7 +310,7 @@ goto :WaitTime1
 
 
 ::-------------STAGE 2---------------
-:WalkFrontLawn
+:WalkFrontLawn1
 
 
 :WalkFrontDoor1
