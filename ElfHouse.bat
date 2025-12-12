@@ -67,13 +67,13 @@ timeout 2 >nul
 echo.
 echo Done!
 echo.
-timeout 3 >nul
+timeout 2 >nul
 
 SET waitedTime1=0
 SET examinedCloser1=0
 SET dogKnowledge=0
 SET menacingFigure=0
-SET carKeysLost=1
+SET carKeysLost=0
 
 ::------------------Arrival-----------------------
 :ArrivalMain
@@ -142,7 +142,7 @@ echo Looking right for the first time, you find an old grey 1989 Jeep Cherokee, 
 echo The Jeep has been still for some time however, and the tires are sunk into the ground. Nice paint job, good body, but hasnt run in a while
 echo The white garage door in front of you looks a bit flimsy and has some dings and dents, its seen better days
 echo Your headlights suddenly go out, cabin lights too. Your car's auto turn-off kicking in, youve been looking around for a while now
-echo Checking your phone, you see its now 9:41PM. Battery is 36%.
+echo Checking your phone, you see its now 9:41PM. Battery is at 36
 echo Looking around some more, it appears the right side of the gutters on the roof are slanting down, starting to fall at the right corner of the garage
 echo    where the house ends and a small section of fence begins. The property edge limits the fence length on this side
 echo Looking left and up, the bedroom windows seen earlier are completely dark, and have been this whole time you realize
@@ -270,7 +270,7 @@ echo You close your eyes and rub your temples, then lower the backrest of the dr
 echo Opening your eyes, you decide to play on your phone for a bit
 echo Service is good here, 5G, and you scroll through Reddit / YouTube Shorts / Instagram Reels / Ticktock for some time
 echo Coming-to from your dopamine enduced haze, you note the time and battery of the phone before putting it in your pocket
-echo 9:55PM. Battery at 28%
+echo 9:55PM. Battery at 28
 echo You notice the car has gotten cold, all the heat sucked out into the dark and bitterly cold night
 echo The cabin lights and headlights automatically turned off at some point too
 echo Probably best to get a move on... 
@@ -286,7 +286,7 @@ echo You close your eyes and rub your temples, then lower the backrest of the dr
 echo Opening your eyes, you decide to play on your phone for a bit
 echo Service is good here, 5G, and you scroll through Reddit / YouTube Shorts / Instagram Reels / Ticktock for some time
 echo Coming-to from your dopamine enduced haze, you note the time and battery of the phone before putting it in your pocket
-echo 9:55PM. Battery at 28%
+echo 9:55PM. Battery at 28
 echo You notice the car has gotten cold, all the heat sucked out into the dark and bitterly cold night
 echo The cabin lights and headlights automatically turned off at some point too
 echo Probably best to get a move on
@@ -445,6 +445,7 @@ echo.
 echo Stay tuned for more!
 echo  ~Elfy
 SET /P EXIT=
+goto :MainMenu
 
 
 :Exit
