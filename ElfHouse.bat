@@ -31,9 +31,10 @@ echo  1 - New Game
 echo  2 - Load Game
 echo  3 - Settings
 echo  4 - Extras
-echo  5 - exit
+echo  5 - Exit
 SET /P MENUCHOICE=
 
+if %MENUCHOICE% EQU 0 goto :DivideByZero
 if %MENUCHOICE% EQU 1 goto :NewGame
 if %MENUCHOICE% EQU 2 goto :LoadGame
 if %MENUCHOICE% EQU 3 goto :Settings
@@ -130,8 +131,37 @@ echo ⠀⢀⡔⠁⠀⠀⡆⡌⠀⠀⠀⠀⢸⢸⠀⠀⠀⠀⠀⡜⠀⡞⢰⠷⠿
 echo ⢀⠎⠀⠀⠀⢸⢡⡇⠀⠀⠀⠀⡆⡆⠀⠀⠀⠀⢠⠇⢠⠁⡞⠀⠀⠀⠀⠀⢸⠀⠁⠀⠀⠀⠀⢰⡇⠁⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⢹⣇
 echo -----------------------------------------------------------------------------
 echo.
-echo That turned out horrible... right click and look at the file to see what this was. Batch doesnt support braile characters
+echo That turned out horrible... right click and look at the file to see what this was. Batch doesnt support braille characters
 SET /P EXTRASCHOICE1=
+goto :MainMenu
+
+
+:DivideByZero
+CLS
+echo %TIME% : Overclocking your CPU....
+timeout 4 >nul
+echo %TIME% : WARNING! Temperature Critical! 19,031°C
+timeout 4 >nul
+echo %TIME% : Gathering the sum of all molecules in the universe....
+timeout 3 >nul
+echo %TIME% : Applying double integral between value of the step 1 and the mass of your mother....
+timeout 5 >nul
+echo %TIME% : This is taking a while, shes rather large....
+timeout 4 >nul
+echo.
+echo %TIME% : Dividing by how many fucks I give....
+timeout 3 >nul
+echo ------
+echo %TIME% : ERROR! Divide by zero! We've created a black hole!
+echo ------
+timeout 2 >nul
+echo (Pretend youre being spaghetiffied)
+timeout 1 >nul
+echo %TIME% : OH NOOOOOooooo
+timeout 5 >nul
+echo.
+CHOICE /C YN /M "Same time next week then?"
+if ERRORLEVEL 2 goto :Exit
 goto :MainMenu
 
 
