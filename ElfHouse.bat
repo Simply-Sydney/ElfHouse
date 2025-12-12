@@ -4,6 +4,8 @@
 :: Version history:
 ::   0.01 - 2025/12/11
 ::      Initial document creation, introduction and description
+::
+:: 
 
 @echo off
 
@@ -40,6 +42,12 @@ if %MENUCHOICE% EQU 2 goto :LoadGame
 if %MENUCHOICE% EQU 3 goto :Settings
 if %MENUCHOICE% EQU 4 goto :Extras
 if %MENUCHOICE% EQU 5 goto :Exit
+if %MENUCHOICE% EQU 891 (
+	CLS
+	echo The year of Her birth. The Great Elfy.
+	SET /P CONTINUE=
+	goto :MainMenu
+)
 goto :OutOfBounds
 
 
@@ -245,7 +253,11 @@ if %ACTIONCHOICE% EQU 3 goto :PeepingTomFront1
 if %ACTIONCHOICE% EQU 4 goto :GarageFront1
 if %ACTIONCHOICE% EQU 5 goto :WanderRight1
 if %ACTIONCHOICE% EQU 6 goto :WanderLeft1
-if %ACTIONCHOICE% EQU 7 AND if %carKeysLost% EQU 1 goto :LookForKeys1
+if %ACTIONCHOICE% EQU 7 (
+	if %carKeysLost% EQU 1 (
+		goto :LookForKeys1
+	)
+)
 echo Please select one of the options provided
 timeout 5 >nul
 goto :ExitCar1
@@ -261,7 +273,10 @@ echo Coming-to from your dopamine enduced haze, you note the time and battery of
 echo 9:55PM. Battery at 28%
 echo You notice the car has gotten cold, all the heat sucked out into the dark and bitterly cold night
 echo The cabin lights and headlights automatically turned off at some point too
-echo Probably best to get a move on... you feel like youre being watched...
+echo Probably best to get a move on... 
+echo.
+echo ...you feel like youre being watched.
+echo.
 echo -----------------------------------------------------------------------------------------------------------
 timeout 4 >nul
 :WaitTime1-1
@@ -285,6 +300,7 @@ echo  3 - Wait some time
 SET /P ACTIONCHOICE=
 if %ACTIONCHOICE% EQU 1 (
 	echo You are far too cold in this car to do that now. Time is wasting
+	timeout 6 >nul
 	goto WaitTime1-1
 )
 if %ACTIONCHOICE% EQU 2 goto :ExitCar1
