@@ -17,7 +17,7 @@ echo Hello, and welcome to my house.
 echo In this script you will walk around my residence, and maybe through a little bit of magic, feel like we were there together through spacetime - close in spirit, if far in proximity.
 echo There may be some hidden options from time to time, paths will obviously be expanded as I continue working on this
 echo.
-echo Please enjoy! And if you encounter bugs or have suggestions, reach out to me. Yall know where I live after all~~
+echo Please enjoy! And if you encounter bugs or have suggestions, reach out to me. Yall know where I live now after all~~
 echo     -- Love, Elfy
 echo.
 echo.
@@ -311,6 +311,20 @@ goto :WaitTime1
 
 ::-------------STAGE 2---------------
 :WalkFrontLawn1
+CLS
+echo -----------------------------------------------------------------------------------------------------------
+echo You walk around in the front yard, trudging through the knee-deep snow
+echo A cold gust of wind brushes by, disturbing the silence of the night and blowing loose snow around
+echo You pull your coat tighter, and can feel your socks getting wet as the snow seeps into your boots
+if %menacingFigure% GTR 0 (
+	echo.
+	echo You feel eyes bore into you from afar... piercing through your jacket more intensely than any cold
+)
+echo Looking inside through the window, the living room can be seen in full view now
+echo A couch runs perpendicular to the window, pushed up against it. Its empty, but you can tell something spends a lot of time on it
+if %dogKnowledge% GTR 0 (
+	echo The depression is likely where the dog lays most of the day. You can see streaks on the window where its nose pressed into it
+)
 
 
 :WalkFrontDoor1
@@ -341,6 +355,7 @@ echo Oh sorry, game saving and loading is not yet supported...
 timeout 2 >nul
 echo Well, this is awkward
 goto :MainMenu
+timeout 4 >nul
 
 
 :Settings
@@ -377,22 +392,12 @@ goto :MainMenu
 CLS
 echo Extras
 echo -----------------------------------------------------------------------------
-echo " 　　へ　　　　 ／|			"
-echo "　　/＼7　　  ∠＿/			"
-echo "　 /　│　　 ／　／			"
-echo "　│　Z ＿,＜　／　　 /`ヽ		"
-echo "　│　　　　　ヽ　　 /　　〉		"
-echo "　 Y　　　　　`　 /　　/		"
-echo "　ｲ●　､　●　　⊂⊃ 〈　　/		"
-echo " ()  へ　　　　|　 ＼〈		"
-echo "　　>ｰ ､_　 ィ　 │ ／／		"
-echo "　 / へ　　 /　ﾉ＜|||		"
-echo "　 ヽ_ﾉ　　(_／　 │／／		"
-echo "　　7　　　　　　　|/		"
-echo "　　＞―r￣￣`ｰ― ＿			"
+echo 01110011 01110101 01100010 01110011 01100011 01110010 01101001
+echo 01100010 01100101 00100000 01110100 01101111 00100000 01110000
+echo 01100101 01110111 01100100 01101001 01100101 01110000 01101001
+echo 01100101
 echo -----------------------------------------------------------------------------
 echo.
-echo That turned out horrible... right click and look at the file to see what this was. Batch doesnt support special characters
 SET /P EXTRASCHOICE1=
 goto :MainMenu
 
