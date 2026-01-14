@@ -74,6 +74,7 @@ SET examinedCloser1=0
 SET dogKnowledge=0
 SET menacingFigure=0
 SET carKeysLost=0
+SET ACTIONCHOICE=0
 
 ::------------------Arrival-----------------------
 :ArrivalMain
@@ -207,7 +208,8 @@ echo Please select one of the options provided
 timeout 5 >nul
 goto :ArrivalExamineCloser3-1
 
-:ExitCar1		::Player got out of the car, check for examine for slip-and-fall
+::Player got out of the car, check for examine for slip-and-fall
+:ExitCar1
 ::--------MAIN PATH----------
 CLS
 echo -----------------------------------------------------------------------------------------------------------
@@ -263,7 +265,8 @@ timeout 5 >nul
 goto :ExitCar1
 
 
-:WaitTime1		::Player is waiting inside of the car
+::Player is waiting inside of the car
+:WaitTime1
 CLS
 echo -----------------------------------------------------------------------------------------------------------
 echo You close your eyes and rub your temples, then lower the backrest of the drivers seat into a lounging position
