@@ -84,7 +84,7 @@ echo You put the car in park, turn it off, and lean back with a sigh
 echo Its night time, dark, and cold. The car dash reads 9:23PM. The date is December 11th, 2025
 echo Lit up in front of your still active headlights is a modest two story house light grey in color
 echo There is a one-car garage directly in front of you, and attached to the left is the rest of the place
-echo 90 degrees to your left is the front yard covered in heaps snow, roughly a foot deep
+echo 90 degrees to your left is the front yard covered in heaps snow, over a foot deep
 echo The house is a corner lot, and the lawn would wrap around to the back of the house if not for the tall white fence that bisects it
 echo The roof is covered in solar pannels, snow clinging to the top of them. It is split into two levels, the house is a tri-level of some design
 echo There are no trees in front of the house, but tall baren ones poke over the roof from the back yard
@@ -113,7 +113,7 @@ echo ....there is movement in the soft light, a shadow
 echo.
 timeout 3 >nul
 echo Further along is two concrete steps leading to a small landing and a front door. The landing and stairs have black iron railing
-echo You see snow on the lawn and patches of ice on the path leading to the concrete landing and front door. A slip hazard
+echo You see deep snow on the lawn and patches of ice on the path leading to the concrete landing and front door. A slip hazard
 echo  [KNOWLEDGE GAINED]
 echo.
 echo More left, the exterior changes to a brickwork on the first floor, with the second floor overhanging and covered in the same
@@ -313,6 +313,7 @@ goto :WaitTime1
 
 
 ::-------------STAGE 2---------------
+:: Player went from the car to wander the front lawn, first occurance
 :WalkFrontLawn1
 CLS
 echo -----------------------------------------------------------------------------------------------------------
@@ -323,11 +324,39 @@ if %menacingFigure% GTR 0 (
 	echo.
 	echo You feel eyes bore into you from afar... piercing through your jacket more intensely than any cold
 )
+if %menacingFigure% EQU 0 (
+	echo.
+	echo You have the eerie sensation of being watched
+)
 echo Looking inside through the window, the living room can be seen in full view now
 echo A couch runs perpendicular to the window, pushed up against it. Its empty, but you can tell something spends a lot of time on it
 if %dogKnowledge% GTR 0 (
-	echo The depression is likely where the dog lays most of the day. You can see streaks on the window where its nose pressed into it
+	echo Its likely where the dog lays most of the day. You can see streaks on the window where its nose pressed into it, and hair all over the couch
 )
+echo.
+echo You trudge further along in the snow, making your way over to the corner of the house, where the white fence begins
+echo Its a tall fence, made of vinyl, meant for privacy
+echo The fence is only not very wide on this side, just covering the ground between the side of the house and the street
+echo Turning around, you consider your next move as another gust pushes loose snow into your face
+echo -----------------------------------------------------------------------------------------------------------
+SET menacingFigure=menacingFigure+1
+SET wanderedCold=1
+echo.
+echo Options:
+echo  1 - Go to Front Door
+echo  2 - Continue around back
+echo  3 - Look through basement windows
+if %carKeysLost% EQU 1 (
+	echo  4 - Look for the keys
+)
+SET /P ACTIONCHOICE=
+if %ACTIONCHOICE% EQU 1 goto :WalkFrontDoor1
+if %ACTIONCHOICE% EQU 2 goto :WanderBack1
+if %ACTIONCHOICE% EQU 3 goto :PeekingTomBasement1
+if %ACTIONCHOICE% EQU 4 goto :LookForKeys1
+echo Please select one of the options provided
+timeout 5 >nul
+goto :WaitTime1
 
 
 :WalkFrontDoor1
@@ -343,6 +372,12 @@ if %dogKnowledge% GTR 0 (
 
 
 :WanderLeft1
+
+
+:WanderBack1
+
+
+:PeekingTomBasement1
 
 
 :LookForKeys1
